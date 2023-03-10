@@ -1,0 +1,32 @@
+@model Test.Models.DirectoryPath
+
+@{
+    Layout = "_Layout";
+}
+
+@{
+    string currentPath = System.IO.Directory.GetCurrentDirectory();
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Load</title>
+</head>
+
+<body>
+    <div>
+        <h1>Enter path to load</h1>
+        <form asp-action="Load" method="post">
+            <label asp-for="Path">Path: </label>
+            <input asp-for="Path"/>
+            <button type="submit">submit</button>
+        </form>
+        <p>Current path: @currentPath</p>
+    </div>
+</body>
+
+</html>
